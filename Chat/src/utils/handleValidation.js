@@ -10,7 +10,7 @@ const handleValidation = (values) => {
     theme: "dark",
   }
   const {password, confirmPassword, username, email} = values;
-    if (!password, !confirmPassword, !username, !email) {
+    if (!password, !username) {
       toast.error("Complethe all the fields", toastOptions);
       return false
     } else if (username.length < 3) {
@@ -19,7 +19,7 @@ const handleValidation = (values) => {
     } else if (password.length < 8) {
       toast.error("Username shloud be grater than 8 characters", toastOptions);
       return false
-    } else if (password !== confirmPassword) {
+    } else if (confirmPassword && password !== confirmPassword) {
       toast.error("Password and confirm password do not match", toastOptions);
       return false
     } else {

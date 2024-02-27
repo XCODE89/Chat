@@ -11,8 +11,14 @@ const userSchema = new mongoose.Schema({
     email: {
         type: String,
         required: true,
-        minLength: 8,
+        unique: true,
+        maxlength: 50,
         match: /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/
+    },
+    password: {
+        type: String,
+        required: true,
+        minLength: 8
     },
     isAvatarImageSet: {
         type: Boolean,

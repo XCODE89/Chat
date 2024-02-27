@@ -5,7 +5,7 @@ import logo from "../assets/react.svg"
 import {ToastContainer, toast} from "react-toastify"
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios"
-import registerRoute from '../utils/APIRoutes';
+import {registerRoute} from '../utils/APIRoutes';
 import handleValidation from "../utils/handleValidation"
 
 const Register = () => {
@@ -19,7 +19,9 @@ const Register = () => {
   })
 
   useEffect(() => {
-
+    if (localStorage.getItem("chat-user")) {
+      navigate("/")
+    }
   }, [])
 
   const toastOptions = {
@@ -58,7 +60,6 @@ const Register = () => {
   return (
     <>
       <FormContainer>
-          <div>Register</div>
           <form onSubmit={(event) => handleSubmit(event)}>
             <div className='brand'>
               <img src={logo} alt="" />
