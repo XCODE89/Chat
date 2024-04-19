@@ -4,7 +4,7 @@ import Robot from "../assets/robot.gif"
 
 const Welcome = ({currentUser}) => {
     useEffect(() => {
-        console.log(currentUser)
+        console.log("user", currentUser)
     },[currentUser])
   return (
     <WelcomeContainer>

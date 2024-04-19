@@ -9,7 +9,6 @@ const ChatInput = ({handleSendMsg}) => {
   const [showEmojiPicker, setShowEmojiPicker] = useState(false)
   const [msg, setMsg] = useState("")
   useEffect(() =>{
-    console.log(msg)
   }, [msg])
 
   const handleEmojiPickerHideShow = () => {

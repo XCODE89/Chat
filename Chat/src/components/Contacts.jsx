@@ -101,6 +101,10 @@ const ContactsContainer = styled.div`
       align-items: center;
       display: flex;
       transition: 0.5s ease-in-out;
+      @media screen and (min-width: 100px) and (max-width: 720px) {
+        flex-direction: column;
+        align-items: left;
+      }
       .avatar {
         img {
           height: 3rem;
@@ -140,6 +144,7 @@ const ContactsContainer = styled.div`
           font-size: 1rem;
         }
       }
+      
     }
 
   }

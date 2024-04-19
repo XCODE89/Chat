@@ -33,6 +33,7 @@ const ChatContainer = ({currentChat, currentUser, socket}) => {
       to: currentChat._id,
       message : msg,
     });
+    console.log("handle msg", socket.current, msg)
     socket.current?.emit("send-msg", {
       to: currentChat._id,
       from: currentUser._id,
@@ -57,8 +58,8 @@ const ChatContainer = ({currentChat, currentUser, socket}) => {
   },[arrivalMessage])
 
   useEffect(() => {
-    scrollRef.current?.scrollIntoView({behaviour : "smooth"})
-  },[])
+    scrollRef.current?.scrollIntoView({behavior : "smooth"})
+  },[messages])
 
   return (
     <Container>
