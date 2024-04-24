@@ -60,13 +60,16 @@ const Contacts = ({contacts, currentUser, changeChat}) => {
 
 const ContactsContainer = styled.div`
   display: grid;
-  grid-template-rows: 10% 75% 15%;
+  grid-template-rows: 15% 70% 15%;
   overflow: hidden;
   background-color: #080420;
+  width: 30%;
+  min-width: 6rem;
   .brand {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 1rem;
     img {
       height: 2rem;
@@ -74,6 +77,9 @@ const ContactsContainer = styled.div`
     h3 {
       color: white;
       text-transform: uppercase;
+      @media screen and (max-width: 480px) {
+              font-size: 14px;
+        }
     }
   }
   .contacts {
@@ -81,6 +87,7 @@ const ContactsContainer = styled.div`
     flex-direction: column;
     align-items: center;
     overflow: auto;
+    overflow-x: hidden;
     gap: 0.8rem;
     &::-webkit-scrollbar {
       width: 0.2rem;
@@ -92,7 +99,6 @@ const ContactsContainer = styled.div`
     }
     .contact {
       background-color: #ffffff39;
-      min-height: 5rem;
       width: 90%;
       cursor: pointer;
       border-radius: 0.2rem;
@@ -100,10 +106,11 @@ const ContactsContainer = styled.div`
       gap: 1rem;
       align-items: center;
       display: flex;
-      transition: 0.5s ease-in-out;
       @media screen and (min-width: 100px) and (max-width: 720px) {
         flex-direction: column;
         align-items: left;
+        align-items: flex-start;
+        gap: 0;
       }
       .avatar {
         img {
@@ -114,6 +121,7 @@ const ContactsContainer = styled.div`
         h3 {
           color: white;
         }
+        
       }
     }
     .selected {
@@ -125,29 +133,27 @@ const ContactsContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 2rem;
+    padding: 0.5rem;
+    gap: 1rem;
     .avatar {
       img {
-        height: 4rem;
+        height: 2rem;
         max-inline-size: 100%;
       }
     }
     .username {
       h2 {
-        color: white
+        color: white;
+        padding: 0 0.5;
       }
     }
-    @media screen and (min-width: 720px) and (max-width: 1080px) {
+    @media screen and (max-width: 720px) {
       gap: 0.5rem;
-      .username {
-        h2 {
-          font-size: 1rem;
-        }
-      }
-      
+      align-items: flex-start;
+      flex-direction: column;
     }
-
   }
+  
 `
 
 export default Contacts

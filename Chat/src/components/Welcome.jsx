@@ -4,8 +4,8 @@ import Robot from "../assets/robot.gif"
 
 const Welcome = ({currentUser}) => {
     useEffect(() => {
-        console.log("user", currentUser)
     },[currentUser])
+    
   return (
     <WelcomeContainer>
         <img src={Robot} alt="Robot" />
@@ -29,6 +29,8 @@ const WelcomeContainer = styled.div`
     span {
         color: #4e00ff;
     }
+    width: 100%;
+    
 `
 
 export default Welcome
