@@ -7,8 +7,10 @@ import axios from 'axios';
 import Welcome from '../components/Welcome';
 import ChatContainer from '../components/ChatContainer';
 import {Socket, io} from "socket.io-client";
+import { UserContext } from "../utils/context";
 
 const Chat = () => {
+  
   const  socket= useRef()
   console.log("otro socket", socket)
 
