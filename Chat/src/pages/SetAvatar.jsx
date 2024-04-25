@@ -10,7 +10,7 @@ import handleValidation from "../utils/handleValidation"
 import {Buffer} from "buffer"
 
 const SetAvatar = () => {
-    const api = "http://api.multiavatar.com/45678945"
+    const api = "https://api.multiavatar.com/45678945"
     const navigate = useNavigate()
 
     const [avatars, setavatars] = useState([]);
