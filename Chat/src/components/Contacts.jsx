@@ -145,12 +145,18 @@ const ContactsContainer = styled.div`
       h2 {
         color: white;
         padding: 0 0.5;
+        font-size: 18px;
       }
     }
     @media screen and (max-width: 720px) {
-      gap: 0.5rem;
+      gap: 0;
       align-items: flex-start;
       flex-direction: column;
+      .username {
+        h2 {
+          font-size: 14px;
+        }
+      }
     }
   }
   

@@ -45,7 +45,7 @@ const ChatInput = ({handleSendMsg}) => {
       <form className="input-container" onSubmit={(e) => sendChat(e)}>
         <input type="text" placeholder='type your message' value={msg} onChange={(e) => setMsg(e.target.value)}/>
         <button className='submit'>
-          <IoMdSend/>
+          <IoMdSend size={24}/>
         </button>
       </form>
     </Container>
@@ -53,14 +53,14 @@ const ChatInput = ({handleSendMsg}) => {
 }
 
 const Container = styled.div`
-  display: grid;
-  grid-template-columns: 5% 95%;
+  display: flex;
   align-items: center;
   background-color: #080420;
-  padding: 0 2rem;
-  padding-bottom: 0%.3rem;
+  padding: 0 0.3rem;
+  padding-bottom: 0.3rem;
   .button-container {
     display: flex;
+    margin-right: 3px;
     align-items: center;
     color: white;
     gap: 1rem;
@@ -114,7 +114,7 @@ const Container = styled.div`
       }
     }
     button {
-      padding: 0.3rem 2rem;
+      padding: 0.3rem 1rem;
       border-radius: 2rem;
       display: flex;
       justify-content: center;
