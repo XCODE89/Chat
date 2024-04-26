@@ -26,7 +26,7 @@ const Contacts = ({contacts, currentUser, changeChat}) => {
         <ContactsContainer>
             <div className="brand">
               <img src={logo} alt="logo"/>
-              <h3>snappy</h3>
+              <h3>ChatApp</h3>
             </div>
             <div className="contacts">
               {
@@ -77,10 +77,13 @@ const ContactsContainer = styled.div`
     h3 {
       color: white;
       text-transform: uppercase;
-      @media screen and (max-width: 480px) {
-              font-size: 14px;
-        }
     }
+    @media screen and (max-width: 480px) {
+      gap: 0;
+      h3 {
+        font-size: 14px;
+      }
+        }
   }
   .contacts {
     display: flex;
@@ -91,6 +94,7 @@ const ContactsContainer = styled.div`
     gap: 0.8rem;
     &::-webkit-scrollbar {
       width: 0.2rem;
+      height: 0.2rem;
       &-thumb {
         background-color: #ffffff39;
         width: 0.1rem;
@@ -98,7 +102,7 @@ const ContactsContainer = styled.div`
       }
     }
     .contact {
-      background-color: #ffffff39;
+      background-color: rgba(255, 255, 255, 0.115);
       width: 90%;
       cursor: pointer;
       border-radius: 0.2rem;
@@ -106,12 +110,6 @@ const ContactsContainer = styled.div`
       gap: 1rem;
       align-items: center;
       display: flex;
-      @media screen and (min-width: 100px) and (max-width: 720px) {
-        flex-direction: column;
-        align-items: left;
-        align-items: flex-start;
-        gap: 0;
-      }
       .avatar {
         img {
           height: 3rem;
@@ -120,13 +118,41 @@ const ContactsContainer = styled.div`
       .username {
         h3 {
           color: white;
+          font-size: 18px;
+          font-weight: 400;
         }
-        
+      }
+      @media screen and (max-width: 720px) {
+        flex-direction: column;
+        align-items: left;
+        align-items: center;
+        gap: 0;
+        background-color: transparent;
+        .avatar {
+          img {
+          height: 2rem;
+          }
+        }
+        .username {
+          h3 {
+            font-size: 12px;
+          }
+        }
       }
     }
     .selected {
       background-color: #9186f3;
     }
+    @media screen and (max-width: 480px) {
+        flex-direction: row;
+        overflow-x: auto;
+        overflow-y: hidden;
+        gap: 0.1rem;
+      }
+      /* .selected {
+        background-color: #9186f3;
+        border-radius: ;
+      } */
   }
   .current_user {
     background-color: #0d0d30;
@@ -148,10 +174,11 @@ const ContactsContainer = styled.div`
         font-size: 18px;
       }
     }
-    @media screen and (max-width: 720px) {
+    @media screen and (max-width: 480px) {
       gap: 0;
-      align-items: flex-start;
+      align-items: center;
       flex-direction: column;
+      background-color: #9186f3;
       .username {
         h2 {
           font-size: 14px;
@@ -159,6 +186,13 @@ const ContactsContainer = styled.div`
       }
     }
   }
+  @media screen and (max-width: 480px) {
+    width: 100%;
+    min-width: none;
+    display: flex;
+    overflow: hidden;
+    gap: 0.5rem;
+    }
   
 `
 

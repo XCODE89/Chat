@@ -60,12 +60,12 @@ const Login = () => {
           <form onSubmit={(event) => handleSubmit(event)}>
             <div className='brand'>
               <img src={logo} alt="" />
-              <h1>snappy</h1>
+              <h1>ChatApp</h1>
             </div>
-            <input type="text" placeholder='Username' name='username' onChange={(e) => handleOnChange(e)} min="3"/>
-            <input type="password" placeholder='Password' name='password' onChange={(e) => handleOnChange(e)}/>
-            <button type='submit'>Login</button>
-            <span>Don't have an account? <Link to="/register">Register</Link></span>
+            <input type="text" placeholder='Usuario' name='username' onChange={(e) => handleOnChange(e)} min="3"/>
+            <input type="password" placeholder='Contraseña' name='password' onChange={(e) => handleOnChange(e)}/>
+            <button type='submit'>Ingresar</button>
+            <span>No tienes una cuenta? <Link to="/register">Regístrate</Link></span>
           </form>
       </FormContainer>
       <ToastContainer>
@@ -110,7 +110,6 @@ const FormContainer = styled.div`
       padding: 1rem;
       border: 0.1rem solid #4e0eff;
       border-radius: 0.4rem;
-      width: 100%;
       font-size: 1rem;
       &:focus {
         border: 0.1rem solid #997af0;

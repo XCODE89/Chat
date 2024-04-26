@@ -21,15 +21,17 @@ const WelcomeContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     flex-direction: column;
     color: white;
+    width: 100%;
+    height: 100%;
     img {
-        height: 20rem;
+        height: 10rem;
     }
     span {
         color: #4e00ff;
     }
-    width: 100%;
     
 `
 

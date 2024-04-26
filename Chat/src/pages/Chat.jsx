@@ -87,13 +87,16 @@ const ChatContainerStyled = styled.div`
   gap: 1rem;
   align-items: center;
   background-color: #131324;
+  overflow: auto;
   .container {
     height: 85vh;
     width: 85vw;
     background-color: #00000076;
     display: flex;
-    @media screen and (min-width:720px) and (max-width:1080px){
-      grid-template-columns: 35% 65%;
+    @media screen and (max-width:480px){
+      flex-direction: column;
+      height: 95vh;
+      width: 95vw;
     }
   }
 `

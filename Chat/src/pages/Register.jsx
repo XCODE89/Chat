@@ -63,14 +63,14 @@ const Register = () => {
           <form onSubmit={(event) => handleSubmit(event)}>
             <div className='brand'>
               <img src={logo} alt="" />
-              <h1>snappy</h1>
+              <h1>ChatApp</h1>
             </div>
-            <input type="text" placeholder='Username' name='username' onChange={(e) => handleOnChange(e)}/>
+            <input type="text" placeholder='Usuario' name='username' onChange={(e) => handleOnChange(e)}/>
             <input type="email" placeholder='Email' name='email' onChange={(e) => handleOnChange(e)}/>
-            <input type="password" placeholder='Password' name='password' onChange={(e) => handleOnChange(e)}/>
-            <input type="password" placeholder='Confirm password' name='confirmPassword' onChange={(e) => handleOnChange(e)}/>
-            <button type='submit'>Create User</button>
-            <span>Already have an account? <Link to="/login">Login</Link></span>
+            <input type="password" placeholder='Correo electronico' name='password' onChange={(e) => handleOnChange(e)}/>
+            <input type="password" placeholder='Confirmar contraseña' name='confirmPassword' onChange={(e) => handleOnChange(e)}/>
+            <button type='submit'>Crear Usuario</button>
+            <span>Ya tienes una cuenta? <Link to="/login">Ingresar</Link></span>
           </form>
       </FormContainer>
       <ToastContainer>
@@ -115,7 +115,6 @@ const FormContainer = styled.div`
       padding: 1rem;
       border: 0.1rem solid #4e0eff;
       border-radius: 0.4rem;
-      width: 100%;
       font-size: 1rem;
       &:focus {
         border: 0.1rem solid #997af0;
