@@ -12,7 +12,6 @@ import { UserContext } from "../utils/context";
 const Chat = () => {
   
   const  socket= useRef()
-  console.log("otro socket", socket)
 
   const navigate = useNavigate()
 
@@ -26,8 +25,7 @@ const Chat = () => {
       if (!localStorage.getItem("chat-user")) {
         navigate("/login")
       } else {
-        const response = await JSON.parse(localStorage.getItem("chat-user"))
-        console.log("/*/*", response)
+        const response = await JSON.parse(localStorage.getItem("chat-user"));
         setCurrentUser(await JSON.parse(localStorage.getItem("chat-user")));
         setIsLoaded(true)
       }
@@ -36,10 +34,8 @@ const Chat = () => {
   },[])
 
   useEffect(() => {
-    console.log("currentuser", currentUser)
     if (currentUser) {
       socket.current = io(host);
-      console.log("*******socket", socket.current)
       socket.current.emit("add-user", currentUser._id);
     }
   },[currentUser])

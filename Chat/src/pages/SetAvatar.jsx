@@ -24,33 +24,13 @@ const SetAvatar = () => {
         theme: "dark",
       }
 
-    const setProfilePicture = async () => {
-        if(selectedAvatar === undefined) {
-            toast.error("Please  select an avatar", toastOptions)
-        } else {
-            const user = await JSON.parse(localStorage.getItem("chat-user"));
-            const {data} = await axios.post(`${setAvatarRoute}/${user._id}`, {
-                image: avatars[selectedAvatar],
-            });
-            console.log("aquiii", data);
-            if (data.isSet) {
-                user.isAvatarImageSet = true;
-                user.avatarImage = data.image;
-                localStorage.setItem("chat-user", JSON.stringify(user));
-                navigate("/")
-            } else {
-                toast.error("Error setting avatar, please try again", toastOptions)
-            }
-        }
-    };
-
-    useEffect(() => {
+      useEffect(() => {
         if (!localStorage.getItem("chat-user")) {
           navigate("/register")
         }
       }, [])
 
-    useEffect(() => {
+      useEffect(() => {
         const buffering = async () => {
             const data = [];
             for (let i = 0; i<5; i++) {
@@ -63,6 +43,26 @@ const SetAvatar = () => {
         };
         buffering()
     },[])
+
+    const setProfilePicture = async () => {
+        if(selectedAvatar === undefined) {
+            toast.error("Please  select an avatar", toastOptions)
+        } else {
+            const user = await JSON.parse(localStorage.getItem("chat-user"));
+            const {data} = await axios.post(`${setAvatarRoute}/${user._id}`, {
+                image: avatars[selectedAvatar],
+            });
+            if (data.isSet) {
+                user.isAvatarImageSet = true;
+                user.avatarImage = data.image;
+                localStorage.setItem("chat-user", JSON.stringify(user));
+                navigate("/")
+            } else {
+                toast.error("Error setting avatar, please try again", toastOptions)
+            }
+        }
+    };
+
   return (
     <>
         <AvatarContainer>

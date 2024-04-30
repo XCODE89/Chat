@@ -33,7 +33,6 @@ const ChatContainer = ({currentChat, currentUser, socket}) => {
       to: currentChat._id,
       message : msg,
     });
-    console.log("handle msg", socket.current, msg)
     socket.current?.emit("send-msg", {
       to: currentChat._id,
       from: currentUser._id,
